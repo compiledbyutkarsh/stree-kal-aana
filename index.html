@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chanderi Samachar · O Stree, Kal Aana!</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚪</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Hind:wght@400;600&family=Kalam:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--wall:#e6e9e1;--ink:#12131a;--neel:#1c3ad1;--kum:#d62b1f;--hald:#f0b400;--paper:#f4ecd6;--night:#0a0d1c;color-scheme:light;
+--s:'Alfa Slab One','Rockwell',Georgia,serif;--b:'Hind',system-ui,sans-serif;--k:'Kalam','Comic Sans MS',cursive;--t:'Special Elite','Courier New',monospace}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--wall);color:var(--ink);font:400 18px/1.6 var(--b);overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.45;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .3 0 0 0 0 .3 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+:focus-visible{outline:3px solid var(--kum);outline-offset:3px}
+#stitch{position:fixed;top:0;left:0;height:5px;width:0;z-index:100;background:repeating-linear-gradient(90deg,var(--kum) 0 14px,transparent 14px 22px)}
+.mast{position:fixed;top:5px;left:0;right:0;z-index:80;display:flex;gap:20px;align-items:baseline;padding:10px clamp(16px,4vw,48px) 8px;background:var(--wall);border-bottom:3px double var(--ink);font:400 13px var(--t);white-space:nowrap}
+.mast b{font:400 clamp(16px,2.4vw,26px) var(--s);margin-right:auto;overflow:hidden;text-overflow:ellipsis}
+.mast a{text-decoration:none;display:none}.mast a:hover{color:var(--kum)}
+.mast span{display:none}
+@media(min-width:900px){.mast a,.mast span{display:block}}
+h2{font:400 clamp(32px,5.6vw,72px)/1.04 var(--s);color:var(--neel);text-shadow:3px 3px 0 var(--kum);margin:0 0 18px}
+.sec{padding:clamp(80px,11vw,150px) clamp(16px,5vw,64px);max-width:1260px;margin:auto}
+.kick{font:400 14px var(--t);margin-bottom:14px;border-top:2px solid var(--ink);display:inline-block;padding-top:6px}
+.lead{max-width:54ch;margin-bottom:34px}
+.rv{clip-path:inset(0 100% 0 0);transform:translateX(-24px);transition:clip-path 1s cubic-bezier(.7,0,.2,1),transform 1s cubic-bezier(.7,0,.2,1)}
+.rv.on{clip-path:inset(-24px);transform:none}
+/* hero */
+.heroW{height:280vh;position:relative}
+.hero{position:sticky;top:0;height:100svh;display:grid;align-content:center;gap:14px;padding:92px clamp(16px,5vw,64px) 20px;overflow:hidden}
+@media(min-width:900px){.hero{grid-template-columns:1.15fr 1fr;gap:24px;align-items:center}}
+.hero h1{font:400 clamp(38px,7.2vw,110px)/.95 var(--s);color:var(--neel);text-shadow:4px 4px 0 var(--kum)}
+.hero h1 span{display:block;overflow:hidden;padding:.04em .1em .1em 0}
+.hero h1 em{font-style:normal;display:inline-block;transform:translateY(115%);animation:up 1s cubic-bezier(.2,.9,.2,1) forwards}
+.hero h1 span:nth-child(2) em{animation-delay:.12s}.hero h1 span:nth-child(3) em{animation-delay:.24s}
+@keyframes up{to{transform:none}}
+.dev{font:700 clamp(22px,3.2vw,42px)/1.3 var(--k);color:var(--kum);margin:10px 0 14px}
+.sub{max-width:44ch;font:400 15px/1.5 var(--t)}
+.hint{font:400 13px var(--t);margin-top:16px;animation:bob 1.6s infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+@media(max-height:760px){.sub,.hint{display:none}}
+.doorbox{perspective:1100px;justify-self:center;height:min(40svh,540px);aspect-ratio:3/4.6;position:relative;filter:drop-shadow(12px 14px 0 rgba(18,19,26,.18))}
+@media(min-width:900px){.doorbox{height:min(68svh,580px)}}
+.frame{position:absolute;inset:0;border:12px solid #6b4a2b;background:radial-gradient(ellipse at 50% 70%,#2b0f18,var(--night) 70%);overflow:hidden}
+.frame svg{position:absolute;left:50%;bottom:0;width:76%;height:auto;transform:translateX(-50%) scale(calc(.55 + var(--o,0)*.45));transform-origin:50% 100%;opacity:var(--o,0);filter:drop-shadow(0 0 16px rgba(214,43,31,.55))}
+.mist{position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(transparent,var(--night));z-index:2}
+.leaf{position:absolute;top:12px;bottom:12px;width:calc(50% - 12px);background:repeating-linear-gradient(90deg,#9b6d3c 0 18px,#8f6234 18px 20px);border:3px solid #5a3d22;display:grid;place-items:center;text-align:center;font:700 clamp(17px,3vw,32px)/1.1 var(--k);color:var(--kum);backface-visibility:hidden;z-index:3}
+.leaf.l{left:12px;transform-origin:left;transform:rotateY(calc(var(--o,0)*-88deg))}
+.leaf.r{right:12px;transform-origin:right;transform:rotateY(calc(var(--o,0)*88deg))}
+.leaf small{display:block;font:400 .5em var(--t);color:var(--ink);margin-top:6px}
+.leaf::after{content:"";position:absolute;top:50%;width:12px;height:12px;border-radius:50%;background:var(--hald)}
+.leaf.l::after{right:10px}.leaf.r::after{left:10px}
+.tick{background:var(--ink);color:var(--wall);overflow:hidden;border-block:4px solid var(--kum);transform:rotate(-1deg);margin:70px -10px 30px;position:relative;z-index:2}
+.tick div{display:flex;gap:50px;width:max-content;padding:13px 0;font:400 16px var(--t);animation:mq 40s linear infinite}
+.tick b{color:var(--hald);font-weight:400}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mani{font:400 clamp(26px,4.6vw,60px)/1.18 var(--s);max-width:1000px}
+.mani span{color:rgba(18,19,26,.16);transition:color .25s}.mani span.on{color:var(--ink)}.mani span.k.on{color:var(--kum)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border:4px solid var(--ink);margin-top:60px;background:var(--paper)}
+.stats div{padding:22px;border-right:4px solid var(--ink)}.stats div:last-child{border:0}
+.stats b{display:block;font:400 clamp(36px,5vw,60px)/1.1 var(--s);color:var(--neel)}.stats span{font:400 14px var(--t)}
+/* big words */
+.bw{overflow:hidden;padding:30px 0;display:grid;gap:6px}
+.bw div{font:400 clamp(60px,13vw,190px)/1 var(--s);white-space:nowrap;color:transparent;-webkit-text-stroke:2px var(--ink);will-change:transform}
+.bw div:nth-child(2){-webkit-text-stroke-color:var(--kum)}
+/* dusk */
+.dW{height:420vh;position:relative}.dS{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--night)}
+.sky{position:absolute;inset:0}.sky.d{background:linear-gradient(#f6c667,#ea7a4b 55%,#7a3f72)}.sky.n{background:linear-gradient(#070a18,#1b2150 75%,#3a2a5c);opacity:0}
+.stars{position:absolute;inset:0;opacity:0;background-image:radial-gradient(2px 2px at 12% 18%,#fff,transparent),radial-gradient(1.5px 1.5px at 30% 8%,#fff,transparent),radial-gradient(2px 2px at 52% 22%,#fff,transparent),radial-gradient(1.5px 1.5px at 71% 10%,#fff,transparent),radial-gradient(2px 2px at 88% 26%,#fff,transparent),radial-gradient(1.5px 1.5px at 20% 34%,#fff,transparent),radial-gradient(1.5px 1.5px at 64% 36%,#fff,transparent)}
+.sun,.moon{position:absolute;width:clamp(70px,12vw,130px);aspect-ratio:1;border-radius:50%}
+.sun{background:radial-gradient(#fff3b0,#ffb627);box-shadow:0 0 80px #ffb627}.moon{background:#f2f0e4;box-shadow:0 0 60px rgba(242,240,228,.6),inset -14px -6px 0 #cfcbb8}
+.city{position:absolute;left:0;right:0;bottom:0;width:100%;height:46%}
+.walker{position:absolute;bottom:2%;height:22%;width:auto;opacity:0;filter:drop-shadow(0 0 12px rgba(214,43,31,.7))}
+.dtext{position:absolute;left:clamp(16px,5vw,64px);top:92px;max-width:min(420px,calc(100% - 32px));background:var(--paper);border:4px solid var(--ink);box-shadow:7px 7px 0 var(--ink);padding:18px 22px}
+.dtext time{font:400 clamp(30px,5vw,48px)/1 var(--s);color:var(--kum);display:block;margin-bottom:6px}.dtext p{font:400 15px/1.5 var(--t)}
+/* door tool */
+.tool{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.tool{grid-template-columns:1fr 1fr}}
+.tool input{width:100%;font:700 24px var(--k);padding:12px 16px;border:3px solid var(--ink);background:var(--paper);margin-bottom:16px}
+.btn{font:400 16px var(--s);padding:14px 26px;background:var(--kum);color:#fff;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);cursor:pointer;transition:.15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}.btn:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--ink)}
+.plate{background:var(--paper);border:6px solid var(--neel);padding:30px 20px;text-align:center;transform:rotate(-2deg);box-shadow:10px 10px 0 var(--ink)}
+.plate .nm{font:700 clamp(26px,4vw,44px)/1.2 var(--k);overflow-wrap:anywhere}
+.plate .pt{font:700 clamp(28px,4.6vw,54px)/1.25 var(--k);color:var(--kum);margin-top:12px;clip-path:inset(0 100% 0 0);transition:clip-path 1.6s steps(24)}
+.plate.done .pt{clip-path:inset(0)}
+.cnt{font:400 14px var(--t);margin-top:18px}
+/* map */
+.mapw{display:grid;gap:24px}
+@media(min-width:900px){.mapw{grid-template-columns:1.5fr 1fr}}
+.map{border:4px solid var(--ink);background:#d9ddd0;box-shadow:8px 8px 0 var(--ink)}.map svg{display:block;width:100%}
+.pin{cursor:pointer;transition:transform .2s;transform-box:fill-box;transform-origin:center}.pin:hover,.pin.sel{transform:scale(1.6)}
+.pin .p{animation:pl 2s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{from{opacity:.7;transform:scale(1)}to{opacity:0;transform:scale(3.4)}}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.chips button{font:400 14px var(--t);padding:8px 16px;border:3px solid var(--ink);background:var(--paper);cursor:pointer}.chips button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.rep{background:var(--paper);padding:34px 28px;border:4px solid var(--ink);min-height:300px}
+.rep h3{font:400 25px/1.15 var(--s);margin:12px 0}.rep p{font:400 15px/1.55 var(--t)}.rep .m{font:400 13px var(--t);margin-top:18px;color:var(--kum)}
+.bdg{font:400 12px var(--t);padding:3px 10px}
+/* horizontal */
+.hw{position:relative}.hs{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:26px;padding-top:78px}
+.hs .hd{padding:0 clamp(16px,5vw,64px)}.hs h2{font-size:clamp(30px,5vw,60px);margin:0}
+.track{display:flex;gap:34px;padding:10px clamp(16px,5vw,64px) 20px;width:max-content;will-change:transform}
+.clip{width:min(78vw,400px);background:var(--paper);padding:20px 22px 24px;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);transform:rotate(var(--r));flex:none}
+.clip small{font:400 12px var(--t);display:block;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:10px}
+.clip h3{font:400 23px/1.12 var(--s);margin-bottom:10px}.clip p{font:400 14px/1.5 var(--t)}
+@media(max-height:700px){.clip p{display:none}}
+/* posters */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px 30px;padding-top:10px}
+.po{position:relative;background:var(--paper);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:18px 18px 0;text-align:center;opacity:0;transform:translateY(90px) rotate(calc(var(--r) + 12deg));transition:opacity .7s,transform .9s cubic-bezier(.2,1.2,.3,1);transition-delay:var(--d)}
+.po.on{opacity:1;transform:rotate(var(--r))}
+.po h3{font:400 38px/1 var(--s);color:var(--kum)}
+.po .ph{height:150px;margin:12px 0;background:#c8c2ab;border:3px solid var(--ink);display:grid;place-items:end center;overflow:hidden}.po .ph svg{width:70%;fill:var(--ink);opacity:.8}
+.po b{font:400 22px var(--s);display:block}.po p{font:400 14px/1.45 var(--t);margin:6px 0 14px}
+.stamp{position:absolute;right:-10px;top:46%;border:4px solid var(--kum);color:var(--kum);font:400 18px var(--s);padding:4px 10px;background:rgba(244,236,214,.9);transform:rotate(-14deg) scale(3);opacity:0;transition:transform .35s cubic-bezier(.5,2,.5,1) .6s,opacity .2s .6s}
+.po.on .stamp{transform:rotate(-14deg);opacity:.95}
+.tabs{display:grid;grid-template-columns:repeat(6,1fr);margin:0 -18px;border-top:2px dashed var(--ink)}
+.tabs i{font:400 10px var(--t);writing-mode:vertical-rl;height:92px;padding:8px 0;border-left:2px dashed var(--ink);text-align:left;font-style:normal}.tabs i:first-child{border:0}
+/* rules */
+.rules{padding-bottom:120px}
+.rule{position:sticky;top:calc(90px + var(--i)*28px);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:26px clamp(18px,3vw,36px);margin-bottom:26px;background:var(--bg);min-height:150px}
+.rule b{font:400 clamp(54px,8vw,100px)/1 var(--s);color:var(--c2)}
+.rule h3{font:400 clamp(21px,3vw,34px)/1.15 var(--s);margin-bottom:6px}.rule p{font:400 15px/1.5 var(--t)}
+/* timeline */
+.tl{position:relative;padding-left:46px;max-width:780px}
+.tl::before{content:"";position:absolute;left:12px;top:0;bottom:0;border-left:4px dashed rgba(18,19,26,.25)}
+.tl .f{position:absolute;left:10px;top:0;width:8px;height:0;background:var(--kum)}
+.ev{position:relative;padding-bottom:38px}
+.ev::before{content:"";position:absolute;left:-44px;top:5px;width:20px;height:20px;background:var(--wall);border:4px solid var(--ink);transform:rotate(45deg);transition:.4s}
+.ev.on::before{background:var(--kum);transform:rotate(225deg) scale(1.15)}
+.ev time{font:400 14px var(--t);color:var(--kum)}.ev h3{font:400 23px/1.2 var(--s);margin:4px 0}.ev p{font:400 15px/1.5 var(--t)}
+/* night */
+.night{background:var(--night);color:#fff;position:relative;height:90vh;min-height:540px;overflow:hidden;cursor:none}
+.night .ttl{position:absolute;left:clamp(16px,5vw,64px);top:40px;right:16px;z-index:3;font:400 15px/1.5 var(--t);color:#aab3e6;max-width:46ch}
+.nl{position:absolute;inset:0}.nl span{position:absolute;font:700 clamp(22px,4.4vw,54px) var(--k);white-space:nowrap;transform:rotate(var(--r))}
+.nl.dim{opacity:.07}
+.nl.lit{color:var(--hald);-webkit-mask-image:radial-gradient(circle 150px at var(--tx,50%) var(--ty,50%),#000 25%,transparent 100%);mask-image:radial-gradient(circle 150px at var(--tx,50%) var(--ty,50%),#000 25%,transparent 100%)}
+.nl.lit .red{color:#ff5a4d}
+/* witness */
+.wg{display:grid;gap:34px;align-items:start}
+@media(min-width:800px){.wg{grid-template-columns:repeat(3,1fr)}}
+.wit{background:var(--paper);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:26px 22px;transform:translateY(var(--py,0)) rotate(var(--r))}
+.wit p{font:400 17px/1.55 var(--t)}.wit b{display:block;margin-top:14px;font:400 15px var(--s);color:var(--neel)}
+.wit::before{content:"“";font:400 70px/.5 var(--s);color:var(--kum);display:block;height:28px}
+/* wall */
+.wh{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:end}
+.board{position:relative;margin-top:30px;min-height:560px;background:#1a2fa6;border:6px solid var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden;touch-action:pan-y}
+.board::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.05 .9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");mix-blend-mode:soft-light}
+.scrawl{position:absolute;right:3%;bottom:8px;font:700 clamp(24px,4vw,50px) var(--k);color:rgba(255,255,255,.22);transform:rotate(-5deg)}
+.board svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.str{fill:none;stroke:#ff3a2e;stroke-width:3;filter:drop-shadow(0 4px 2px rgba(0,0,0,.45))}
+.board.solved .str{stroke:var(--hald);stroke-dasharray:12 9;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-42}}
+.card{position:absolute;width:clamp(104px,26vw,196px);padding:16px 10px 12px;background:var(--paper);color:var(--ink);transform:rotate(var(--r));cursor:grab;user-select:none;touch-action:none;box-shadow:0 14px 26px rgba(0,0,0,.5);clip-path:polygon(0 2%,10% 0,26% 2%,42% 0,60% 2%,78% 0,100% 1%,99% 40%,100% 70%,98% 100%,78% 98%,55% 100%,32% 98%,12% 100%,0 98%,1% 60%)}
+.card.drag{cursor:grabbing;box-shadow:0 30px 44px rgba(0,0,0,.6)}
+.card::before{content:"";position:absolute;left:50%;top:0;width:15px;height:15px;margin-left:-7px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9aa0,var(--kum) 60%,#6a0008);box-shadow:0 3px 4px rgba(0,0,0,.5)}
+.card .ph{height:76px;margin:6px 0 8px;background:#2a3ea0;display:grid;place-items:center;filter:sepia(.5) contrast(1.15)}.card .ph svg{width:52px;height:52px;stroke:var(--paper);fill:none;stroke-width:3;stroke-linecap:round}
+.card p{font:700 clamp(16px,2vw,20px)/1.1 var(--k)}.card small{font:400 11px var(--t);display:block;margin-top:6px;opacity:.7}
+.card.note{background:#ffe170}
+.twist{display:none;margin-top:30px;padding:26px;border:4px solid var(--ink);background:var(--hald);box-shadow:8px 8px 0 var(--ink);font:400 16px/1.55 var(--t)}.twist.on{display:block;animation:pop .6s}
+@keyframes pop{from{transform:scale(.94) rotate(-1deg);opacity:0}}
+.twist b{display:block;font:400 26px var(--s);margin-bottom:8px}
+footer{background:var(--ink);color:var(--wall);padding:50px clamp(16px,5vw,64px);font:400 14px/1.6 var(--t);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+footer strong{color:var(--hald);font-weight:400}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.po{clip-path:none;transform:none;opacity:1}.hero h1 em{transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="fig" viewBox="0 0 160 300">
+<path d="M80 10C50 10 42 48 44 84 46 112 36 140 28 180L132 180C124 140 114 112 116 84 118 48 110 10 80 10Z" fill="#a8160d"/>
+<ellipse cx="80" cy="62" rx="17" ry="23" fill="#0b0508"/><circle cx="73" cy="58" r="2.2" fill="#ffe9a0"/><circle cx="87" cy="58" r="2.2" fill="#ffe9a0"/>
+<path d="M28 180C26 230 14 268 4 300L156 300C146 268 134 230 132 180Z" fill="#d62b1f"/>
+<path d="M62 196 52 300M80 190V300M98 196 108 300" stroke="#8f1109" stroke-width="3" fill="none"/>
+<path d="M42 110C70 150 104 170 134 196" stroke="#f0b400" stroke-width="4" fill="none"/><path d="M4 292H156" stroke="#f0b400" stroke-width="5"/>
+<path d="M38 150C32 170 34 188 40 202M122 150C128 170 126 188 120 202" stroke="#e8c9a8" stroke-width="6" stroke-linecap="round" fill="none"/></symbol>
+<symbol id="man" viewBox="0 0 100 100"><circle cx="50" cy="38" r="20"/><path d="M8 100C8 66 28 60 50 60S92 66 92 100Z"/></symbol></defs></svg>
+<div id="stitch"></div>
+<header class="mast"><b>Chanderi Samachar</b><a href="#mark">Mark your door</a><a href="#map">Map</a><a href="#clips">Reports</a><a href="#missing">Missing</a><a href="#rules">Rules</a><a href="#wall">Evidence wall</a><span id="date"></span></header>
+
+<div class="heroW" id="heroW"><div class="hero">
+<div>
+<p class="kick">Town alert · Chanderi, Madhya Pradesh (fictional)</p>
+<h1><span><em>O Stree,</em></span><span><em>Kal</em></span><span><em>Aana!</em></span></h1>
+<div class="dev">ओ स्त्री, कल आना</div>
+<p class="sub" id="sub"></p>
+<p class="hint">Keep scrolling. Open the door.</p>
+</div>
+<div class="doorbox" id="door">
+<div class="frame"><svg viewBox="0 0 160 300" aria-hidden="true"><use href="#fig"/></svg><div class="mist"></div></div>
+<div class="leaf l"><div>O Stree,<small>कल आना</small></div></div>
+<div class="leaf r"><div>Kal Aana<small>कल आना</small></div></div>
+</div></div></div>
+
+<div class="tick" aria-hidden="true"><div id="mq"></div></div>
+
+<section class="sec"><p class="mani" id="mani">Chanderi keeps one rule. Write it on your door before sunset, and she <span class="k">will pass you by.</span> Forget, and the night decides.</p>
+<div class="stats rv" id="stats"><div><b data-n="9">0</b><span>reports this month</span></div><div><b data-n="4">0</b><span>residents missing</span></div><div><b data-n="7">0</b><span>sightings after sunset</span></div><div><b data-n="1240">0</b><span>doors marked so far</span></div></div></section>
+
+<div class="bw" aria-hidden="true"><div id="w1">KAL AANA · कल आना · KAL AANA · कल आना</div><div id="w2">NOT TODAY · NOT TONIGHT · NOT TODAY · NOT TONIGHT</div></div>
+
+<div class="dW" id="dW"><div class="dS">
+<div class="sky d"></div><div class="sky n" id="sn"></div><div class="stars" id="stars"></div>
+<div class="sun" id="sun"></div><div class="moon" id="moon"></div>
+<svg class="city" id="city" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+<svg class="walker" id="walk" viewBox="0 0 160 300" aria-hidden="true"><use href="#fig"/></svg>
+<div class="dtext"><time id="dt">18:30</time><p id="dp"></p></div>
+</div></div>
+
+<section class="sec" id="mark">
+<p class="kick rv">Do this before sunset</p><h2 class="rv">Mark your door</h2>
+<div class="tool"><div class="rv"><p class="lead">Type your family name. The plate will paint itself the way the phrase is written on doors across Chanderi.</p>
+<input id="nm" placeholder="Sharma Niwas" maxlength="22" aria-label="Your house name"><button class="btn" id="paint">Paint the door</button><p class="cnt" id="cnt"></p></div>
+<div class="plate rv" id="plate"><div class="nm" id="pn">Sharma Niwas</div><div class="pt">ओ स्त्री, कल आना</div></div></div>
+</section>
+
+<section class="sec" id="map">
+<p class="kick rv">Incident map</p><h2 class="rv">Where it happened</h2><p class="lead rv">Tap a pin to read its report, or filter the map by type.</p>
+<div class="chips" id="chips"></div>
+<div class="mapw"><div class="map rv"><svg viewBox="0 0 600 400" role="img" aria-label="Hand-drawn map of Chanderi with incident pins">
+<path d="M-10 335C120 300 220 385 340 342S520 305 620 335" fill="none" stroke="#1c3ad1" stroke-opacity=".5" stroke-width="26"/>
+<g fill="none" stroke="#12131a" stroke-width="3"><path d="M40 60L300 90 560 50"/><path d="M300 90L280 250 140 290"/><path d="M280 250L470 230 560 170"/><path d="M470 230L440 320"/><path d="M60 180L280 250"/><path d="M300 90L470 230"/></g>
+<g fill="#f4ecd6" stroke="#12131a" stroke-width="3"><rect x="90" y="100" width="70" height="46"/><rect x="330" y="120" width="80" height="50"/><rect x="190" y="170" width="60" height="50"/><rect x="480" y="90" width="70" height="40"/></g>
+<text x="24" y="388" font-family="Special Elite" font-size="13" fill="#12131a">Betwa river</text><g id="pins"></g></svg></div>
+<article class="rep rv" id="rep" aria-live="polite"></article></div>
+</section>
+
+<div class="hw" id="clips"><div class="hs"><div class="hd"><p class="kick">Reports from the town</p><h2>Seven clippings</h2></div><div class="track" id="track"></div></div></div>
+
+<section class="sec" id="missing">
+<p class="kick rv">Have you seen them?</p><h2 class="rv">Missing from Chanderi</h2><p class="lead rv">Four residents have not come home. If you know anything, tell the Chanderi Chowki, and check that your own door is marked.</p>
+<div class="pgrid" id="pg"></div>
+</section>
+
+<section class="sec rules" id="rules">
+<p class="kick rv">Survival guide</p><h2 class="rv">Six rules of the night</h2><p class="lead rv">Learned the hard way by the people of Chanderi. Keep scrolling and the rules stack up.</p>
+<div id="rl"></div>
+</section>
+
+<section class="sec" id="time">
+<p class="kick rv">Timeline</p><h2 class="rv">Seven nights, one pattern</h2>
+<div class="tl" id="tl"><div class="f" id="tf"></div></div>
+</section>
+
+<section class="night" id="night"><div class="ttl">Night walk. Move your torch across the walls. Some things are only written in the dark.</div>
+<div class="nl dim" id="nd"></div><div class="nl lit" id="nlit"></div></section>
+
+<section class="sec" id="wit">
+<p class="kick rv">Witness statements</p><h2 class="rv">What the town says</h2>
+<div class="wg" style="margin-top:30px">
+<blockquote class="wit" data-p=".06" style="--r:-1.5deg"><p>I heard anklets behind me all the way home. When I stopped, they stopped. When I looked back, there was only my own unmarked door.</p><b>Sunita, flower seller</b></blockquote>
+<blockquote class="wit" data-p="-.05" style="--r:1.2deg"><p>My grandmother painted the phrase on our door every evening for sixty years. We laughed at her. We are not laughing now.</p><b>Dev, college student</b></blockquote>
+<blockquote class="wit" data-p=".1" style="--r:-.8deg"><p>The tower clock has never been wrong, not once. On the seventh night it stopped at 11:47, and the keeper’s lamp was still burning.</p><b>Inspector Rawat, Chanderi Chowki</b></blockquote>
+</div></section>
+
+<section class="sec" id="wall">
+<div class="wh"><div><p class="kick rv">Evidence wall</p><h2 class="rv">Pin it. Drag it. Connect it.</h2><p class="lead rv" style="margin:0">Drag the clues around and the red string follows. When you are ready, decode the wall.</p></div><button class="btn" id="dec" aria-pressed="false">Decode the wall</button></div>
+<div class="board" id="board"><svg id="strs" aria-hidden="true"></svg><div class="scrawl">kal aana.</div></div>
+<div class="twist" id="twist"><b>The twist</b>Every missing person lived within forty steps of an unmarked door. The warning on the other doors was never a curse. It was a request from the one person who knew what Stree was protecting.</div>
+</section>
+
+<footer><span>Built for the Stree’s Curse challenge · The Evidence Wall hex</span><span>Designed and developed by <strong>Kannupriya Malik</strong></span></footer>
+
+<script>
+const $=s=>document.querySelector(s),cl=(v,a,b)=>Math.max(a,Math.min(b,v)),NS='http://www.w3.org/2000/svg';
+const D=[
+{t:'Disappearance',c:'#d62b1f',x:120,y:120,n:'Weaver vanishes from Lane of Looms',d:'Bhairav was last seen locking his loom shed after sunset. The lock was still warm and the thread still on the spindle.',w:'Night 1 · 19:12'},
+{t:'Sighting',c:'#f0b400',x:310,y:150,n:'Woman in red near the Baoli',d:'Two children report a tall figure in a red sari at the stepwell. She cast no shadow and never turned around.',w:'Night 2 · 20:03'},
+{t:'Warning',c:'#1c3ad1',x:215,y:195,n:'Doors marked “O Stree, Kal Aana”',d:'Residents paint the phrase on their doors. Marked houses are left alone.',w:'Night 3 · 18:40'},
+{t:'Disappearance',c:'#d62b1f',x:515,y:110,n:'Tailor’s shop found open',d:'Vikki’s shop was open and lit, a half-stitched blouse still on the machine. Nobody has seen him since.',w:'Night 4 · 21:30'},
+{t:'Sighting',c:'#f0b400',x:440,y:300,n:'Anklet sounds near the river',d:'Three residents heard anklets walking the ghat. The sound stopped outside an unmarked door.',w:'Night 5 · 22:15'},
+{t:'Warning',c:'#1c3ad1',x:90,y:230,n:'Do not whistle after dark',d:'Elders advise silence on the streets after sunset. Whistling is linked to two sightings.',w:'Night 6 · 19:00'},
+{t:'Disappearance',c:'#d62b1f',x:380,y:220,n:'Clock tower keeper missing',d:'The tower stopped at 11:47. The keeper’s lantern still burns, and his door is unmarked.',w:'Night 7 · 23:47'}];
+$('#date').textContent=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+$('#mq').innerHTML=D.map(i=>`<span><b>ALERT</b> ${i.n}</span>`).join('').repeat(2);
+const sub=$('#sub'),S1='Four residents have gone missing. Every one of them lived behind an unmarked door.';sub.textContent=S1;
+// manifesto words
+const mn=$('#mani');mn.innerHTML=[...mn.childNodes].map(n=>n.nodeType==3?n.textContent.split(' ').filter(Boolean).map(w=>`<span>${w}</span>`).join(' '):n.textContent.split(' ').map(w=>`<span class="k">${w}</span>`).join(' ')).join(' ');
+const mw=[...mn.querySelectorAll('span')];
+// dusk scene
+const city=$('#city');let h='<rect y="262" width="1200" height="38" fill="#12131a"/>';const W=[];
+[[0,90,120],[100,70,170],[180,110,100],[300,80,190],[390,60,150],[460,90,230],[560,70,140],[640,100,180],[750,60,120],[820,110,210],[940,70,150],[1020,90,190],[1120,80,130]].forEach(b=>{h+=`<rect x="${b[0]}" y="${262-b[2]}" width="${b[1]}" height="${b[2]}" fill="#12131a"/>`;for(let y=262-b[2]+18;y<244;y+=30)for(let x=b[0]+10;x<b[0]+b[1]-14;x+=24)W.push([x,y,Math.random()])});
+h+='<rect x="590" y="52" width="46" height="210" fill="#12131a"/><path d="M580 52 613 14 646 52Z" fill="#12131a"/><circle cx="613" cy="84" r="14" fill="#f2f0e4"/><path d="M613 84V74M613 84l7 4" stroke="#12131a" stroke-width="2"/>';
+h+=W.map(w=>`<rect class="wn" data-t="${w[2].toFixed(2)}" x="${w[0]}" y="${w[1]}" width="9" height="13" fill="#ffc94a" opacity="0"/>`).join('');city.innerHTML=h;
+const wn=[...city.querySelectorAll('.wn')],ST=[['The lamps are lit and the doors are being painted. Chanderi is almost ready.'],['Bhairav locks his shed in Lane of Looms. Nobody sees him again.'],['Shutters close. Anklet bells are heard near the ghat.'],['Every clock in the old quarter stands still. One door is unmarked.']];
+// door tool
+let n0=1240;const cnt=$('#cnt');cnt.textContent=n0+' doors marked in Chanderi tonight.';
+$('#nm').oninput=e=>{$('#pn').textContent=e.target.value||'Sharma Niwas';$('#plate').classList.remove('done')};
+$('#paint').onclick=()=>{const p=$('#plate');if(!p.classList.contains('done')){p.classList.add('done');cnt.textContent=(++n0)+' doors marked in Chanderi tonight. Yours is one of them.'}};
+// map
+let flt='All';const ch=$('#chips'),pins=$('#pins'),rep=$('#rep');
+ch.innerHTML=['All','Disappearance','Sighting','Warning'].map(t=>`<button aria-pressed="${t==flt}">${t}</button>`).join('');
+ch.onclick=e=>{if(e.target.tagName!='BUTTON')return;flt=e.target.textContent;[...ch.children].forEach(b=>b.setAttribute('aria-pressed',b.textContent==flt));draw()};
+function show(i){const r=D[i];rep.innerHTML=`<span class="bdg" style="background:${r.c};color:${r.c=='#f0b400'?'#12131a':'#fff'}">${r.t}</span><h3>${r.n}</h3><p>${r.d}</p><div class="m">Report ${i+1} of ${D.length} · ${r.w}</div>`;[...pins.children].forEach(g=>g.classList.toggle('sel',g.dataset.i==i))}
+function draw(){pins.innerHTML='';D.forEach((r,i)=>{if(flt!='All'&&r.t!=flt)return;const g=document.createElementNS(NS,'g');g.setAttribute('class','pin');g.dataset.i=i;g.tabIndex=0;g.setAttribute('role','button');g.setAttribute('aria-label',r.n);g.innerHTML=`<circle class="p" cx="${r.x}" cy="${r.y}" r="9" fill="${r.c}"/><circle cx="${r.x}" cy="${r.y}" r="9" fill="${r.c}" stroke="#12131a" stroke-width="3"/>`;g.onclick=()=>show(i);g.onkeydown=e=>{if(e.key=='Enter')show(i)};pins.appendChild(g)})}
+draw();show(0);
+// clippings
+const cw=$('#clips'),tr=$('#track');
+tr.innerHTML=D.map((r,i)=>`<article class="clip" style="--r:${[-2,1.5,-1,2,-2.5,1,-1.5][i]}deg"><small>${r.w} · ${r.t}</small><h3>${r.n}</h3><p>${r.d}</p></article>`).join('');
+let hmax=0,vel=0,lastY=0;function hsz(){hmax=Math.max(0,tr.scrollWidth-innerWidth);cw.style.height=(hmax+innerHeight)+'px'}hsz();addEventListener('resize',hsz);addEventListener('load',hsz);
+// posters
+const P=[['Bhairav Prasad','52 · Weaver','Lane of Looms, 19:12'],['Vikki Chanderi','34 · Tailor','Main Bazaar, 21:30'],['Mohan Lal','61 · Clock-tower keeper','Old Clock Tower, 23:47'],['Radha Devi','28 · Schoolteacher','Near the Baoli, 20:05']];
+$('#pg').innerHTML=P.map((p,i)=>`<article class="po" style="--r:${[-2,1.5,-1.2,2][i]}deg;--d:${i*.15}s"><h3>MISSING</h3><div class="ph"><svg viewBox="0 0 100 100"><use href="#man"/></svg></div><b>${p[0]}</b><p>${p[1]}<br>Last seen: ${p[2]}<br>Door: unmarked</p><div class="stamp">UNMARKED</div><div class="tabs">${'<i>Chanderi Chowki · Call now</i>'.repeat(6)}</div></article>`).join('');
+// rules
+const R=[['Write it before sunset.','Paint “O Stree, Kal Aana” on your door while there is still light. A faded or half-written sign does not count.','#d62b1f','#f4ecd6'],['Never open to a voice you cannot see.','She can copy any voice she has heard, including your mother’s.','#1c3ad1','#f0b400'],['Do not whistle, hum or sing after dark.','Sound travels further at night. She follows it.','#f4ecd6','#1c3ad1'],['Keep a lamp at the threshold.','Light it at dusk and keep it burning until the first call to prayer or the first rooster.','#12131a','#f0b400'],['If she knocks, say one thing.','Say “Kal aana,” then nothing more. Do not explain, bargain or ask her name.','#f0b400','#d62b1f'],['Never follow the anklets.','If the bells move away from you, let them go. Walking towards them is how people vanish.','#d62b1f','#f4ecd6']];
+$('#rl').innerHTML=R.map((r,i)=>`<article class="rule" style="--i:${i};--bg:${r[3]};--c2:${r[2]};background:${r[3]};color:${r[3]=='#1c3ad1'?'#fff':'#12131a'}"><b>${i+1}</b><div><h3>${r[0]}</h3><p>${r[1]}</p></div></article>`).join('');
+// timeline
+$('#tl').insertAdjacentHTML('beforeend',D.map(r=>`<div class="ev"><time>${r.w}</time><h3>${r.n}</h3><p>${r.d}</p></div>`).join(''));
+// night torch
+const T=['She knows your name','Do not answer the second knock','Third lane. Unmarked.','कल आना','She walks backwards','Count the doors','11:47','Bhairav was here','Lock it twice','Whistle and she turns'];
+const pos=[[6,34],[38,28],[8,56],[58,40],[40,54],[56,70],[12,80],[34,78],[66,24],[24,45]];
+const mk=c=>T.map((t,i)=>`<span style="left:${pos[i][0]}%;top:${pos[i][1]}%;--r:${(i%5-2)*3}deg" ${i%3==1&&c?'class="red"':''}>${t}</span>`).join('');
+$('#nd').innerHTML=mk();$('#nlit').innerHTML=mk(1);
+const ng=$('#night'),nl=$('#nlit');let tx=null,ty=0;ng.onpointermove=e=>{const r=ng.getBoundingClientRect();tx=e.clientX-r.left;ty=e.clientY-r.top};
+(function torch(t){const r=ng.getBoundingClientRect();let x=tx,y=ty;if(tx==null){x=r.width*(.5+.38*Math.sin(t/1700));y=r.height*(.55+.28*Math.sin(t/1100))}nl.style.setProperty('--tx',x+'px');nl.style.setProperty('--ty',y+'px');requestAnimationFrame(torch)})(0);
+// wall
+const I=['M8 52 24 24 40 52M16 40h16M4 58h56','M20 20c0 10-6 12-6 20s6 8 6 8M40 14c0 10-6 12-6 20s6 8 6 8','M32 8c-12 0-14 20-18 28h36c-4-8-6-28-18-28zM26 44a6 6 0 0 0 12 0','','M6 40c12-24 24 20 36-4s12 4 16-8','M32 6a26 26 0 1 0 .1 0M32 16v16l10 6','M4 22c10-10 20 10 28 0s20 10 28 0M4 40c10-10 20 10 28 0s20 10 28 0','M10 30h28a10 10 0 1 1-10 10M38 30l16-8'];
+const K=[[0,'Last seen: Lane of Looms','Photo 01',-4],[1,'Footprints. No heels, no toes.','Plaster cast',3],[2,'Anklet bell, found at the ghat','Evidence B',-3],['n','She comes tomorrow. Always tomorrow.','Handwritten',5],[4,'Red thread, the same on every doorstep','Evidence D',-5],[5,'Tower stopped at 11:47','Photo 06',3],[6,'Gold saree border, torn','Evidence E',-3],['n','Third lane. Unmarked. Always unmarked.','Handwritten',4]];
+const E=[[0,1],[1,2],[2,4],[3,4],[4,5],[1,4],[0,3],[2,5],[5,6],[6,7],[3,7],[0,6]];
+const B=$('#board'),S=$('#strs'),cards=[];let z=10;
+K.forEach(k=>{const c=document.createElement('div');c.className='card'+(k[0]=='n'?' note':'');c.style.setProperty('--r',k[3]+'deg');c.tabIndex=0;c.innerHTML=(k[0]=='n'?'':`<div class="ph"><svg viewBox="0 0 64 64"><path d="${I[k[0]]}"/></svg></div>`)+`<p>${k[1]}</p><small>${k[2]}</small>`;B.appendChild(c);cards.push(c);
+let ox,oy;c.onpointerdown=e=>{c.setPointerCapture(e.pointerId);c.classList.add('drag');ox=e.clientX-c.offsetLeft;oy=e.clientY-c.offsetTop;c.style.zIndex=++z};
+c.onpointermove=e=>{if(!c.classList.contains('drag'))return;c.style.left=cl(e.clientX-ox,0,B.clientWidth-c.offsetWidth)+'px';c.style.top=cl(e.clientY-oy,0,B.clientHeight-c.offsetHeight)+'px';str()};
+c.onpointerup=c.onpointercancel=()=>c.classList.remove('drag')});
+function str(){const pt=c=>[c.offsetLeft+c.offsetWidth/2,c.offsetTop+7];S.innerHTML=E.map(([a,b])=>{const p=pt(cards[a]),q=pt(cards[b]),mx=(p[0]+q[0])/2,my=(p[1]+q[1])/2+Math.hypot(p[0]-q[0],p[1]-q[1])*.15;return`<path class="str" d="M${p[0]} ${p[1]}Q${mx} ${my} ${q[0]} ${q[1]}"/>`}).join('')}
+let lw=0;function lay(){const w=B.clientWidth;if(w==lw)return;lw=w;const cols=innerWidth<700?3:4,cw2=cards[0].offsetWidth,gap=(w-cols*cw2)/(cols+1),rows=Math.ceil(cards.length/cols);B.style.height=rows*250+90+'px';cards.forEach((c,i)=>{c.style.left=gap+(i%cols)*(cw2+gap)+'px';c.style.top=36+Math.floor(i/cols)*250+(i%3)*14+'px'});str()}
+addEventListener('resize',lay);lay();document.fonts&&document.fonts.ready.then(()=>{lw=0;lay()});
+$('#dec').onclick=function(){const on=this.getAttribute('aria-pressed')!='true';this.setAttribute('aria-pressed',on);this.textContent=on?'Reset the wall':'Decode the wall';B.classList.toggle('solved',on);$('#twist').classList.toggle('on',on)};
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('on');if(e.target.id=='stats')document.querySelectorAll('[data-n]').forEach(b=>{const n=+b.dataset.n,t0=performance.now();(function f(t){const p=cl((t-t0)/1600,0,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)});io.unobserve(e.target)}),{threshold:.2});
+document.querySelectorAll('.rv,.ev,.po').forEach(e=>io.observe(e));
+// scroll loop
+const hw=$('#heroW'),door=$('#door'),dW=$('#dW'),sun=$('#sun'),moon=$('#moon'),walk=$('#walk');
+function sc(){const hh=document.documentElement,y=scrollY;vel=vel*.8+(y-lastY)*.2;lastY=y;
+$('#stitch').style.width=y/(hh.scrollHeight-innerHeight||1)*100+'%';
+const hp=cl(y/(hw.offsetHeight-innerHeight),0,1),o=cl((hp-.08)/.6,0,1);door.style.setProperty('--o',o);const s=o>.9?'Too late. She is already inside.':S1;if(sub.textContent!=s)sub.textContent=s;
+const m=mn.getBoundingClientRect(),mp=cl((innerHeight*.85-m.top)/(m.height+innerHeight*.4),0,1);mw.forEach((w,i)=>w.classList.toggle('on',i/mw.length<mp));
+[['#w1',-1],['#w2',1]].forEach(([q,d])=>{const e=$(q),r=e.parentElement.getBoundingClientRect(),p=(innerHeight-r.top)/(innerHeight+r.height);e.style.transform=`translateX(${(d<0?-p*60:-60+p*60)}%)`});
+const dp=cl(-dW.getBoundingClientRect().top/(dW.offsetHeight-innerHeight),0,1),W2=innerWidth,H2=innerHeight;
+$('#sn').style.opacity=cl(dp*1.6-.2,0,1);$('#stars').style.opacity=cl(dp*2-.8,0,1);
+sun.style.left=(8+dp*60)+'%';sun.style.top=(18+dp*dp*90)+'%';moon.style.left=(92-dp*70)+'%';moon.style.top=(100-Math.sin(Math.min(1,dp*1.1)*Math.PI/1.6)*84)+'%';
+wn.forEach(w=>w.setAttribute('opacity',dp*1.3>w.dataset.t*.9+.1?1:0));
+const mins=1110+Math.round(dp*317),si=Math.min(3,Math.floor(dp*4));$('#dt').textContent=`${Math.floor(mins/60)}:${String(mins%60).padStart(2,'0')}`;if($('#dp').textContent!=ST[si][0])$('#dp').textContent=ST[si][0];
+walk.style.opacity=cl((dp-.75)*5,0,1);walk.style.left=(88-cl((dp-.75)*4,0,1)*60)+'%';
+tr.style.transform=`translateX(${-cl(-cw.getBoundingClientRect().top/(cw.offsetHeight-innerHeight||1),0,1)*hmax}px) skewX(${cl(-vel*.35,-7,7)}deg)`;
+const t=$('#tl').getBoundingClientRect();$('#tf').style.height=cl(innerHeight*.6-t.top,0,t.height)+'px';
+document.querySelectorAll('[data-p]').forEach(e=>{const r=e.getBoundingClientRect();e.style.setProperty('--py',innerWidth<800?0:(r.top+r.height/2-innerHeight/2)*e.dataset.p+'px')})}
+addEventListener('scroll',sc,{passive:true});addEventListener('resize',sc);sc();
+</script>
+</body>
+</html>
